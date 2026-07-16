@@ -3,7 +3,8 @@
    Scene 1 - Countdown Portal
 ====================================================== */
 
-const birthdayDate = new Date("August 10, 2026 00:00:00").getTime();
+//const birthdayDate = new Date("August 10, 2026 00:00:00").getTime();
+const birthdayDate = new Date("January 1, 2025 00:00:00").getTime();
 
 const loadingScreen = document.getElementById("loadingScreen");
 
@@ -124,12 +125,24 @@ giftBox.addEventListener("click",()=>{
 
     }
 
-    // Birthday has arrived
+   // Birthday has arrived
 
-    giftMessage.innerHTML="✨ Opening Your Surprise... ✨";
+giftMessage.innerHTML = "✨ Opening Your Surprise... ✨";
 
-    // Scene 2 will be added later
-    alert("🎉 Happy Birthday Sonal! Your surprise is now unlocking...");
+giftBox.classList.add("open");
+
+document.getElementById("bgMusic").play();
+
+setTimeout(()=>{
+
+    document.getElementById("birthdayExperience").style.display="block";
+
+    document.getElementById("birthdayExperience")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+},1800);
 
 });
 // ==========================================
