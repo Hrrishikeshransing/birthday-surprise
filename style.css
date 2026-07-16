@@ -1,3 +1,616 @@
-Name your file...
+/* =====================================================
+   BIRTHDAY SURPRISE WEBSITE
+   Scene 1 - Countdown Portal
+===================================================== */
 
-style.css
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+/* ==========================
+Loading Screen
+========================== */
+
+#loadingScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#050816;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+.loaderHeart{
+
+    font-size:70px;
+
+    animation:heartbeat 1.3s infinite;
+
+}
+
+#loadingScreen p{
+
+    margin-top:20px;
+
+    color:#d4af37;
+
+    letter-spacing:2px;
+
+}
+
+/* ==========================
+Background
+========================== */
+
+#stars{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(circle,#ffffff 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+    opacity:.35;
+
+}
+
+#moon{
+
+    position:fixed;
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    right:80px;
+
+    top:60px;
+
+    background:#fff8dc;
+
+    box-shadow:
+
+    0 0 30px #fff8dc,
+
+    0 0 80px #ffe082;
+
+}
+
+/* ==========================
+Countdown Screen
+========================== */
+
+#countdownPage{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+.glassCard{
+
+    width:100%;
+
+    max-width:850px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+    padding:50px;
+
+    text-align:center;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+/* ==========================
+Typography
+========================== */
+
+.glassCard h3{
+
+    color:#d4af37;
+
+    font-size:22px;
+
+    font-weight:500;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+}
+
+.glassCard h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:72px;
+
+    color:#ffffff;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+    text-shadow:0 0 20px rgba(255,215,0,.35);
+
+}
+
+.intro{
+
+    max-width:600px;
+
+    margin:0 auto 45px;
+
+    font-size:20px;
+
+    color:#d8d8d8;
+
+    line-height:1.8;
+
+}
+
+/* ==========================
+Countdown
+========================== */
+
+.countdownContainer{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin:40px 0;
+
+}
+
+.timeBox{
+
+    width:130px;
+
+    height:130px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,215,0,.25);
+
+    border-radius:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 0 20px rgba(255,215,0,.12);
+
+}
+
+.timeBox span{
+
+    font-size:48px;
+
+    font-weight:700;
+
+    color:#FFD700;
+
+}
+
+.timeBox small{
+
+    margin-top:10px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#ffffff;
+
+}
+
+.unlockText{
+
+    margin-top:20px;
+
+    color:#d4af37;
+
+    font-size:18px;
+
+}
+/* ==========================
+   Gift Box
+========================== */
+
+#giftArea{
+
+    margin-top:50px;
+
+}
+
+#giftBox{
+
+    width:170px;
+
+    height:170px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:90px;
+
+    cursor:pointer;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    border:2px solid rgba(255,215,0,.35);
+
+    box-shadow:
+        0 0 25px rgba(255,215,0,.25),
+        0 0 60px rgba(255,215,0,.15);
+
+    transition:.4s ease;
+
+}
+
+#giftBox:hover{
+
+    transform:translateY(-8px) scale(1.05);
+
+    box-shadow:
+        0 0 40px rgba(255,215,0,.45),
+        0 0 90px rgba(255,215,0,.30);
+
+}
+
+#giftMessage{
+
+    margin-top:25px;
+
+    font-size:22px;
+
+    color:#FFD700;
+
+    font-weight:600;
+
+}
+
+#lockMessage{
+
+    display:none;
+
+    margin-top:30px;
+
+    color:#ffdf80;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+/* ==========================
+   Floating Animation
+========================== */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+#giftBox{
+
+    animation:floating 3s ease-in-out infinite;
+
+}
+
+/* ==========================
+   Heart Beat
+========================== */
+
+@keyframes heartbeat{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    25%{
+
+        transform:scale(1.15);
+
+    }
+
+    50%{
+
+        transform:scale(1);
+
+    }
+
+    75%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+/* ==========================================
+   Scene 1 - Final Animations
+========================================== */
+
+/* Moon Glow */
+
+@keyframes moonGlow{
+
+    0%{
+
+        box-shadow:
+        0 0 30px #fff8dc,
+        0 0 80px #FFD700;
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 60px #fff8dc,
+        0 0 150px #FFD700;
+
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 30px #fff8dc,
+        0 0 80px #FFD700;
+
+    }
+
+}
+
+#moon{
+
+    animation:moonGlow 6s ease-in-out infinite;
+
+}
+
+/* Twinkling Stars */
+
+@keyframes twinkle{
+
+    0%{
+
+        opacity:.25;
+
+    }
+
+    50%{
+
+        opacity:.75;
+
+    }
+
+    100%{
+
+        opacity:.25;
+
+    }
+
+}
+
+#stars{
+
+    animation:twinkle 5s infinite;
+
+}
+
+/* Fade In */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.glassCard{
+
+    animation:fadeIn 1.5s ease;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .glassCard{
+
+        padding:35px;
+
+    }
+
+    .glassCard h1{
+
+        font-size:52px;
+
+    }
+
+    .countdownContainer{
+
+        gap:15px;
+
+    }
+
+    .timeBox{
+
+        width:100px;
+
+        height:100px;
+
+    }
+
+    .timeBox span{
+
+        font-size:34px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    #moon{
+
+        width:90px;
+
+        height:90px;
+
+        right:20px;
+
+        top:20px;
+
+    }
+
+    .glassCard{
+
+        padding:25px;
+
+    }
+
+    .glassCard h1{
+
+        font-size:42px;
+
+    }
+
+    .intro{
+
+        font-size:17px;
+
+    }
+
+    .timeBox{
+
+        width:80px;
+
+        height:80px;
+
+    }
+
+    .timeBox span{
+
+        font-size:28px;
+
+    }
+
+    #giftBox{
+
+        width:130px;
+
+        height:130px;
+
+        font-size:70px;
+
+    }
+
+}
