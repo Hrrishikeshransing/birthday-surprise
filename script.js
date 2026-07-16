@@ -44,20 +44,22 @@ function updateCountdown(){
 
     // Birthday has arrived
 
-    if(distance <= 0){
+if(distance <= 0){
 
-        unlocked = true;
+    unlocked = true;
 
-        days.innerHTML = "00";
-        hours.innerHTML = "00";
-        minutes.innerHTML = "00";
-        seconds.innerHTML = "00";
+    days.innerHTML = "00";
+    hours.innerHTML = "00";
+    minutes.innerHTML = "00";
+    seconds.innerHTML = "00";
 
-        giftMessage.innerHTML = "🎉 Open Your Birthday Gift 🎉";
+    giftMessage.innerHTML = "🎉 Open Your Birthday Gift 🎉";
 
-        return;
+    giftBox.classList.add("unlocked");
 
-    }
+    return;
+
+}
 
     const d = Math.floor(distance / (1000 * 60 * 60 * 24));
 
