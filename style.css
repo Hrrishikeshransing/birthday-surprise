@@ -614,3 +614,165 @@ Countdown
     }
 
 }
+/* ===========================================
+   Luxury Gift Box
+=========================================== */
+
+#giftBox{
+
+    position:relative;
+
+    width:180px;
+
+    height:180px;
+
+    margin:auto;
+
+    cursor:pointer;
+
+    animation:floating 3s ease-in-out infinite;
+
+}
+
+.gift-base{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:180px;
+
+    height:120px;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #f6d365,
+        #fda085
+    );
+
+}
+
+.gift-lid{
+
+    position:absolute;
+
+    top:0;
+
+    width:180px;
+
+    height:55px;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #ffd54f,
+        #ffb300
+    );
+
+    transition:1s;
+
+}
+
+.gift-ribbon-vertical{
+
+    position:absolute;
+
+    left:82px;
+
+    width:16px;
+
+    height:180px;
+
+    background:#d81b60;
+
+    z-index:5;
+
+}
+
+.gift-ribbon-horizontal{
+
+    position:absolute;
+
+    top:40px;
+
+    width:180px;
+
+    height:16px;
+
+    background:#d81b60;
+
+    z-index:5;
+
+}
+
+.gift-glow{
+
+    position:absolute;
+
+    inset:-20px;
+
+    border-radius:20px;
+
+    box-shadow:
+
+        0 0 40px rgba(255,215,0,.4),
+
+        0 0 100px rgba(255,215,0,.3);
+
+}
+/* ===========================================
+   Gift Opening Animation
+=========================================== */
+
+#giftBox.open .gift-lid{
+
+    transform:
+        translateY(-70px)
+        rotate(-18deg);
+
+    transform-origin:center;
+
+}
+
+#giftBox.open .gift-glow{
+
+    animation:giftGlowBurst 1.5s ease forwards;
+
+}
+
+@keyframes giftGlowBurst{
+
+    0%{
+
+        opacity:.4;
+
+        transform:scale(1);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:scale(1.8);
+
+        box-shadow:
+            0 0 80px rgba(255,215,0,.9),
+            0 0 180px rgba(255,215,0,.8);
+
+    }
+
+}
+
+/* Hidden sections */
+
+#birthdayExperience,
+#gallerySection,
+#cakeSection{
+
+    display:none;
+
+}
