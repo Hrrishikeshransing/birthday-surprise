@@ -365,7 +365,7 @@ container.scrollIntoView({
 
 }
 
-function showGalleryImages(){
+function showGalleryImages() {
 
     const images = document.querySelectorAll(".gallery img");
 
@@ -375,8 +375,7 @@ function showGalleryImages(){
 
             img.classList.add("show");
 
-            // After the last image appears
-            if(index === images.length - 1){
+            if (index === images.length - 1) {
 
                 console.log("Gallery completed");
 
@@ -397,8 +396,6 @@ function showGalleryImages(){
     });
 
 }
-}
-
 function goToCake(){
 
     const cake = document.getElementById("cakeSection");
