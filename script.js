@@ -314,36 +314,50 @@ function typeWriter(){
 
     function typing(){
 
-        if(index < birthdayText.length){
+       if(index < birthdayText.length){
 
-            message.innerHTML += birthdayText.charAt(index);
-
-          // Keep the typing text centered
-container.scrollIntoView({
+    message.innerHTML += birthdayText.charAt(index);
+          // Keep the newest line visible
+message.lastChild?.parentElement?.scrollIntoView({
     behavior: "smooth",
-    block: "center"
+    block: "end"
 });
 
-            index++;
+    index++;
 
-            setTimeout(typing, 35);
+    // Scroll the page every 8 characters
+    if(index % 8 === 0){
 
-        }else{
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
 
-            // Wait 2 seconds after typing finishes
-            setTimeout(function(){
+    }
 
-                document.getElementById("gallerySection").style.display = "block";
+    setTimeout(typing, 35);
 
-                showGalleryImages();
+}else{
 
-                document.getElementById("gallerySection").scrollIntoView({
-                    behavior: "smooth"
-                });
+    // Final scroll after typing completes
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
 
-            }, 2000);
+    setTimeout(function(){
 
-        }
+        document.getElementById("gallerySection").style.display = "block";
+
+        showGalleryImages();
+
+        document.getElementById("gallerySection").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    },2000);
+
+}
 
     }
 
