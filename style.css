@@ -1055,3 +1055,46 @@ Countdown
     transform:scale(1.05);
 
 }
+/* ===========================================
+   Continue Journey Button
+=========================================== */
+
+#continueJourneyBtn{
+
+    display:none;
+
+    margin:60px auto 20px;
+
+    padding:18px 45px;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:#fff;
+
+    background:linear-gradient(135deg,#ff4d94,#ff8fab);
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 20px rgba(255,77,148,.5),
+        0 0 45px rgba(255,143,171,.4);
+
+    transition:.35s ease;
+
+}
+
+#continueJourneyBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 30px rgba(255,77,148,.8),
+        0 0 60px rgba(255,143,171,.7);
+
+}
