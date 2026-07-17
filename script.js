@@ -384,6 +384,18 @@ function showGalleryImages(){
 
                     continueBtn.style.display = "block";
 
+continueBtn.onclick = function () {
+
+    continueBtn.style.display = "none";
+
+    document.getElementById("cakeSection").style.display = "block";
+
+    document.getElementById("cakeSection").scrollIntoView({
+        behavior: "smooth"
+    });
+
+};
+
                    console.log("Continue button ready");
 
                 }, 1000);
@@ -395,16 +407,4 @@ function showGalleryImages(){
     });
 
 }
-document.getElementById("continueJourneyBtn").onclick = function () {
 
-    alert("Button clicked!");
-
-    this.style.display = "none";
-
-    document.getElementById("cakeSection").style.display = "block";
-
-    document.getElementById("cakeSection").scrollIntoView({
-        behavior: "smooth"
-    });
-
-};
