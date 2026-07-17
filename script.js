@@ -136,6 +136,7 @@ giftBox.classList.add("open");
 document
 .getElementById("goldenLight")
 .classList.add("active");
+   createSparkles();
 
 document.getElementById("bgMusic").play();
 
