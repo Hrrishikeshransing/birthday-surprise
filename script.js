@@ -137,6 +137,7 @@ document
 .getElementById("goldenLight")
 .classList.add("active");
    createSparkles();
+createMagicParticles();
 
 document.getElementById("bgMusic").play();
 
