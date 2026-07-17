@@ -217,6 +217,7 @@ window.addEventListener("load",()=>{
 console.log("✅ Scene 1 Loaded Successfully");
 
 function createSparkles(){
+   console.log("Sparkles function called");
 
     for(let i=0;i<80;i++){
 
