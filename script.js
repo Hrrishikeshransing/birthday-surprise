@@ -377,15 +377,25 @@ function showGalleryImages(){
 
             img.classList.add("show");
 
-            // After the last image appears
-            if(index === images.length - 1){
+   // After the last image appears
+if (index === images.length - 1) {
 
-                setTimeout(() => {
+    console.log("Gallery completed");
 
-                    continueBtn.style.display = "block";
+    // Wait 30 seconds, then show the cake
+    setTimeout(() => {
+
+        document.getElementById("cakeSection").style.display = "block";
+
+        document.getElementById("cakeSection").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }, 30000);
 
 
-                   console.log("Continue button ready");
+
+                  
 
                 }, 1000);
 
