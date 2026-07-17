@@ -214,3 +214,38 @@ window.addEventListener("load",()=>{
 // ==========================================
 
 console.log("✅ Scene 1 Loaded Successfully");
+
+function createSparkles(){
+
+    for(let i=0;i<80;i++){
+
+        const sparkle=document.createElement("div");
+
+        sparkle.className="sparkle";
+
+        sparkle.style.left=window.innerWidth/2+"px";
+        sparkle.style.top=window.innerHeight/2+"px";
+
+        sparkle.style.setProperty(
+            "--x",
+            (Math.random()*900-450)+"px"
+        );
+
+        sparkle.style.setProperty(
+            "--y",
+            (Math.random()*700-350)+"px"
+        );
+
+        sparkle.style.animationDelay=(Math.random()*0.5)+"s";
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(()=>{
+
+            sparkle.remove();
+
+        },3000);
+
+    }
+
+}
