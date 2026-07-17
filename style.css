@@ -981,3 +981,77 @@ Countdown
     white-space:pre-line;
 
 }
+/* ===========================================
+   Scene 5 - Gallery
+=========================================== */
+
+#gallerySection{
+
+    padding:80px 30px;
+
+    text-align:center;
+
+}
+
+#gallerySection h2{
+
+    font-size:50px;
+
+    color:#FFD700;
+
+    margin-bottom:50px;
+
+    text-shadow:
+        0 0 12px gold,
+        0 0 25px gold;
+
+}
+
+.gallery{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+.gallery img{
+
+    width:260px;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    border:4px solid rgba(255,215,0,.35);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.35);
+
+    opacity:0;
+
+    transform:translateY(40px) scale(.9);
+
+    transition:all .8s ease;
+
+}
+
+.gallery img.show{
+
+    opacity:1;
+
+    transform:translateY(0) scale(1);
+
+}
+
+.gallery img:hover{
+
+    transform:scale(1.05);
+
+}
