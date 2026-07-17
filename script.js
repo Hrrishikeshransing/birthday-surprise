@@ -367,7 +367,9 @@ message.lastChild?.parentElement?.scrollIntoView({
 
 function showGalleryImages(){
 
-    const images = document.querySelectorAll(".gallery img");
+   const images = document.querySelectorAll(".gallery img");
+
+    const continueBtn = document.getElementById("continueJourneyBtn");
 
     images.forEach((img, index) => {
 
@@ -375,8 +377,30 @@ function showGalleryImages(){
 
             img.classList.add("show");
 
+            // After the last image appears
+            if(index === images.length - 1){
+
+                setTimeout(() => {
+
+                    continueBtn.style.display = "block";
+
+                }, 1000);
+
+            }
+
         }, index * 600);
 
     });
 
 }
+document.getElementById("continueJourneyBtn").addEventListener("click", function(){
+
+    this.style.display = "none";
+
+    document.getElementById("cakeSection").style.display = "block";
+
+    document.getElementById("cakeSection").scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
