@@ -1098,3 +1098,96 @@ Countdown
         0 0 60px rgba(255,143,171,.7);
 
 }
+/* ===========================================
+   Scene 6 - Birthday Cake
+=========================================== */
+
+#cakeSection{
+
+    text-align:center;
+
+    padding:100px 20px;
+
+}
+
+#cakeSection h2{
+
+    font-size:50px;
+
+    color:#FFD700;
+
+    margin-bottom:30px;
+
+}
+
+#cake{
+
+    font-size:170px;
+
+    position:relative;
+
+    display:inline-block;
+
+}
+
+#candles{
+
+    font-size:40px;
+
+    margin-top:-35px;
+
+    animation:flicker .8s infinite alternate;
+
+}
+
+@keyframes flicker{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-2px);
+
+        opacity:.8;
+
+    }
+
+}
+
+#wishText{
+
+    margin-top:35px;
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    color:white;
+
+}
+
+#blowCandlesBtn{
+
+    margin-top:40px;
+
+    padding:18px 40px;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#ff5e8a;
+
+    color:white;
+
+}
