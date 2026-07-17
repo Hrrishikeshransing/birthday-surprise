@@ -329,6 +329,8 @@ function typeWriter(){
 
                 document.getElementById("gallerySection").style.display = "block";
 
+                showGalleryImages();
+
                 document.getElementById("gallerySection").scrollIntoView({
                     behavior: "smooth"
                 });
@@ -340,5 +342,21 @@ function typeWriter(){
     }
 
     typing();
+
+}
+
+function showGalleryImages(){
+
+    const images = document.querySelectorAll(".gallery img");
+
+    images.forEach((img, index) => {
+
+        setTimeout(() => {
+
+            img.classList.add("show");
+
+        }, index * 600);
+
+    });
 
 }
