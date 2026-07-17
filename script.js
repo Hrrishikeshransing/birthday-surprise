@@ -367,9 +367,7 @@ container.scrollIntoView({
 
 function showGalleryImages(){
 
-   const images = document.querySelectorAll(".gallery img");
-
-    const continueBtn = document.getElementById("continueJourneyBtn");
+    const images = document.querySelectorAll(".gallery img");
 
     images.forEach((img, index) => {
 
@@ -377,27 +375,20 @@ function showGalleryImages(){
 
             img.classList.add("show");
 
-   // After the last image appears
-if (index === images.length - 1) {
+            // After the last image appears
+            if(index === images.length - 1){
 
-    console.log("Gallery completed");
+                console.log("Gallery completed");
 
-    // Wait 30 seconds, then show the cake
-    setTimeout(() => {
+                setTimeout(() => {
 
-        document.getElementById("cakeSection").style.display = "block";
+                    document.getElementById("cakeSection").style.display = "block";
 
-        document.getElementById("cakeSection").scrollIntoView({
-            behavior: "smooth"
-        });
+                    document.getElementById("cakeSection").scrollIntoView({
+                        behavior: "smooth"
+                    });
 
-    }, 30000);
-
-
-
-                  
-
-                }, 1000);
+                }, 30000);
 
             }
 
@@ -405,6 +396,7 @@ if (index === images.length - 1) {
 
     });
 
+}
 }
 
 function goToCake(){
