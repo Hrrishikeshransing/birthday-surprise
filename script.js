@@ -150,6 +150,8 @@ setTimeout(()=>{
             behavior:"smooth"
         });
 
+    typeWriter();
+
 },1800);
 
 });
@@ -282,5 +284,48 @@ function createMagicParticles(){
         },4500);
 
     }
+
+}
+const birthdayText =
+`Happy Birthday, Sonal! ❤️
+
+Today is all about celebrating you.
+
+May your smile always shine brighter than the stars, your dreams come true, and your heart always be filled with happiness.
+
+Thank you for being such a wonderful person.
+
+This little surprise was made especially for you.
+
+With lots of love,
+Hrishikesh ❤️`;
+
+function typeWriter(){
+
+    const message=document.getElementById("typewriterMessage");
+
+    const container=document.getElementById("birthdayMessageContainer");
+
+    container.classList.add("show");
+
+    let index=0;
+
+    message.innerHTML="";
+
+    function typing(){
+
+        if(index<birthdayText.length){
+
+            message.innerHTML+=birthdayText.charAt(index);
+
+            index++;
+
+            setTimeout(typing,35);
+
+        }
+
+    }
+
+    typing();
 
 }
