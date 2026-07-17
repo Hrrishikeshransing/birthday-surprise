@@ -384,17 +384,7 @@ function showGalleryImages(){
 
                     continueBtn.style.display = "block";
 
-continueBtn.onclick = function () {
-
-    continueBtn.style.display = "none";
-
-    document.getElementById("cakeSection").style.display = "block";
-
-    document.getElementById("cakeSection").scrollIntoView({
-        behavior: "smooth"
-    });
-
-};
+continueBtn.style.display = "block";
 
                    console.log("Continue button ready");
 
@@ -408,3 +398,23 @@ continueBtn.onclick = function () {
 
 }
 
+function goToCake(){
+
+    const cake = document.getElementById("cakeSection");
+
+    const button = document.getElementById("continueJourneyBtn");
+
+    button.style.display = "none";
+
+    cake.style.display = "block";
+
+    setTimeout(() => {
+
+        cake.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    },100);
+
+}
