@@ -880,3 +880,46 @@ Countdown
     }
 
 }
+
+/* ===========================================
+   Floating Magic Particles
+=========================================== */
+
+.magicParticle{
+
+    position: fixed;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #ffd700;
+
+    box-shadow:
+        0 0 8px #ffd700,
+        0 0 18px #ffec80;
+
+    pointer-events: none;
+
+    z-index: 902;
+
+    animation: floatMagic 4s linear forwards;
+
+}
+
+@keyframes floatMagic{
+
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(.5);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-350px)
+                  translateX(var(--drift))
+                  scale(1.4);
+    }
+
+}
