@@ -384,7 +384,6 @@ function showGalleryImages(){
 
                     continueBtn.style.display = "block";
 
-continueBtn.style.display = "block";
 
                    console.log("Continue button ready");
 
