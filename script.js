@@ -318,6 +318,12 @@ function typeWriter(){
 
             message.innerHTML += birthdayText.charAt(index);
 
+          // Keep the typing text centered
+container.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+});
+
             index++;
 
             setTimeout(typing, 35);
