@@ -829,3 +829,54 @@ Countdown
     }
 
 }
+
+/* ===========================================
+   Magic Sparkles
+=========================================== */
+
+.sparkle{
+
+    position:fixed;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:gold;
+
+    box-shadow:
+        0 0 10px gold,
+        0 0 20px gold,
+        0 0 35px gold;
+
+    pointer-events:none;
+
+    z-index:901;
+
+    animation:sparkleFly 2.5s linear forwards;
+
+}
+
+@keyframes sparkleFly{
+
+    0%{
+
+        opacity:1;
+
+        transform:translate(0,0) scale(.2);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(var(--x),var(--y))
+            scale(1.6);
+
+    }
+
+}
