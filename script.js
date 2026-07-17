@@ -302,25 +302,38 @@ Hrishikesh ❤️`;
 
 function typeWriter(){
 
-    const message=document.getElementById("typewriterMessage");
+    const message = document.getElementById("typewriterMessage");
 
-    const container=document.getElementById("birthdayMessageContainer");
+    const container = document.getElementById("birthdayMessageContainer");
 
     container.classList.add("show");
 
-    let index=0;
+    let index = 0;
 
-    message.innerHTML="";
+    message.innerHTML = "";
 
     function typing(){
 
-        if(index<birthdayText.length){
+        if(index < birthdayText.length){
 
-            message.innerHTML+=birthdayText.charAt(index);
+            message.innerHTML += birthdayText.charAt(index);
 
             index++;
 
-            setTimeout(typing,35);
+            setTimeout(typing, 35);
+
+        }else{
+
+            // Wait 2 seconds after typing finishes
+            setTimeout(function(){
+
+                document.getElementById("gallerySection").style.display = "block";
+
+                document.getElementById("gallerySection").scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }, 2000);
 
         }
 
