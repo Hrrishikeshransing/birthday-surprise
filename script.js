@@ -318,9 +318,9 @@ function typeWriter(){
 
     message.innerHTML += birthdayText.charAt(index);
           // Keep the newest line visible
-message.lastChild?.parentElement?.scrollIntoView({
+container.scrollIntoView({
     behavior: "smooth",
-    block: "end"
+    block: "center"
 });
 
     index++;
@@ -384,6 +384,8 @@ function showGalleryImages(){
 
                     continueBtn.style.display = "block";
 
+                   console.log("Continue button ready");
+
                 }, 1000);
 
             }
@@ -393,7 +395,9 @@ function showGalleryImages(){
     });
 
 }
-document.getElementById("continueJourneyBtn").addEventListener("click", function(){
+document.getElementById("continueJourneyBtn").onclick = function () {
+
+    alert("Button clicked!");
 
     this.style.display = "none";
 
@@ -403,4 +407,4 @@ document.getElementById("continueJourneyBtn").addEventListener("click", function
         behavior: "smooth"
     });
 
-});
+};
