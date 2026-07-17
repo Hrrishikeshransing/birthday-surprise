@@ -133,6 +133,10 @@ giftMessage.innerHTML = "✨ Opening Your Surprise... ✨";
 
 giftBox.classList.add("open");
 
+document
+.getElementById("goldenLight")
+.classList.add("active");
+
 document.getElementById("bgMusic").play();
 
 setTimeout(()=>{
