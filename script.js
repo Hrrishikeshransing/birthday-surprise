@@ -251,3 +251,35 @@ function createSparkles(){
     }
 
 }
+
+function createMagicParticles(){
+
+    for(let i=0;i<40;i++){
+
+        const particle=document.createElement("div");
+
+        particle.className="magicParticle";
+
+        particle.style.left=
+            (window.innerWidth/2 + (Math.random()*120-60))+"px";
+
+        particle.style.top=
+            (window.innerHeight/2 + (Math.random()*120-60))+"px";
+
+        particle.style.setProperty(
+            "--drift",
+            (Math.random()*200-100)+"px"
+        );
+
+        particle.style.animationDelay=
+            (Math.random()*0.8)+"s";
+
+        document.body.appendChild(particle);
+
+        setTimeout(()=>{
+            particle.remove();
+        },4500);
+
+    }
+
+}
