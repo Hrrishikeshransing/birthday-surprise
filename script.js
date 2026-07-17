@@ -387,7 +387,7 @@ function showGalleryImages() {
                         behavior: "smooth"
                     });
 
-                }, 30000);
+                }, 10000);
 
             }
 
