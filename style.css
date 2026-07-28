@@ -1196,3 +1196,42 @@ Countdown
      display:none;
 
 }
+#magicWish{
+
+    display:none;
+
+    margin-top:35px;
+
+    font-size:38px;
+
+    color:#FFD700;
+
+    text-align:center;
+
+    text-shadow:
+        0 0 15px gold,
+        0 0 35px gold;
+
+    animation:fadeWish 1.5s ease;
+
+}
+
+@keyframes fadeWish{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
