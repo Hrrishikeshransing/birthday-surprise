@@ -390,11 +390,24 @@ function showGalleryImages() {
 
     document.getElementById("candles").classList.add("blown");
 
-    document.getElementById("magicWish").style.display = "block";
+    const wish = document.getElementById("magicWish");
 
-                      startConfetti();
+wish.style.display = "block";
 
-                      startBalloons();
+// Move the wish message to the center of the screen
+wish.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+});
+
+// Wait for scrolling to finish
+setTimeout(() => {
+
+    startConfetti();
+
+    startBalloons();
+
+}, 1200);
 
 }, 5000);
 
