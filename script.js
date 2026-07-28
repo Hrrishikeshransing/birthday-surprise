@@ -560,36 +560,42 @@ function startFireworks(){
 
                 },1500);
 
+               
+
             }
 
         }, burst * 800);
 
     }
-
-}
-
-setTimeout(() => {
+   setTimeout(() => {
 
     showFinalLetter();
 
-}, 800 * 8 + 2000);
+}, 8500);
+
+}
+
 
 function showFinalLetter(){
 
+    // Hide the cake section
+    document.getElementById("cakeSection").style.display = "none";
+
+    // Show the final letter section
     const finalSection = document.getElementById("finalMessage");
     const finalLetter = document.getElementById("finalLetter");
 
-    finalSection.style.display = "flex";
+    finalSection.classList.add("show");
 
-// Wait for the browser to render the section
-setTimeout(() => {
+    // Scroll to the letter
+    setTimeout(() => {
 
-    finalSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
+        finalSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
 
-}, 100);
+    }, 300);
 
     const message = `Happy Birthday Sonal ❤️
 
@@ -608,6 +614,8 @@ Once again, Happy Birthday Sonal. I hope your day is as wonderful and as special
 With all my love,
 
 Hrishikesh ❤️`;
+
+    finalLetter.textContent = "";
 
     let i = 0;
 
