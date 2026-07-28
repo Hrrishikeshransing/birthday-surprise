@@ -581,9 +581,15 @@ function showFinalLetter(){
 
     finalSection.style.display = "flex";
 
+// Wait for the browser to render the section
+setTimeout(() => {
+
     finalSection.scrollIntoView({
-        behavior: "smooth"
+        behavior: "smooth",
+        block: "start"
     });
+
+}, 100);
 
     const message = `Happy Birthday Sonal ❤️
 
