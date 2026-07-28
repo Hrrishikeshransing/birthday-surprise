@@ -386,6 +386,11 @@ function showGalleryImages() {
                     document.getElementById("cakeSection").scrollIntoView({
                         behavior: "smooth"
                     });
+                   setTimeout(() => {
+
+    document.getElementById("candles").classList.add("blown");
+
+}, 5000);
 
                 }, 10000);
 
