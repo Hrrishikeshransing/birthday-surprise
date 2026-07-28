@@ -621,17 +621,27 @@ Hrishikesh ❤️`;
 
     function typeLetter(){
 
-        if(i < message.length){
+    if(i >= message.length) return;
 
-            finalLetter.textContent += message.charAt(i);
+    const char = message.charAt(i);
+    finalLetter.textContent += char;
+    i++;
 
-            i++;
+    let delay = 45; // Normal typing speed
 
-            setTimeout(typeLetter, 30);
-
-        }
-
+    if(char === ","){
+        delay = 300;
     }
+    else if(char === "." || char === "!" || char === "?"){
+        delay = 700;
+    }
+    else if(char === "\n"){
+        delay = 1000;
+    }
+
+    setTimeout(typeLetter, delay);
+
+}
 
     typeLetter();
 
