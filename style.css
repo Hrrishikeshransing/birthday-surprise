@@ -1191,3 +1191,12 @@ Countdown
     color:white;
 
 }
+#candles.blown{
+
+    opacity: 0;
+
+    transform: translateY(-20px);
+
+    transition: all 1s ease;
+
+}
