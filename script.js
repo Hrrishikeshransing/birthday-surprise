@@ -621,7 +621,13 @@ Hrishikesh ❤️`;
 
     function typeLetter(){
 
-    if(i >= message.length) return;
+    if(i >= message.length){
+
+    startHeartRain();
+
+    return;
+
+}
 
     const char = message.charAt(i);
     finalLetter.textContent += char;
@@ -644,5 +650,34 @@ Hrishikesh ❤️`;
 }
 
     typeLetter();
+
+}
+
+function startHeartRain(){
+
+    const container = document.getElementById("heartContainer");
+
+    setInterval(()=>{
+
+        const heart = document.createElement("div");
+
+        heart.className = "floatingHeart";
+
+        heart.innerHTML = Math.random() > 0.5 ? "❤️" : "💕";
+
+        heart.style.left = Math.random()*100 + "%";
+
+        heart.style.animationDuration =
+            (4 + Math.random()*3) + "s";
+
+        container.appendChild(heart);
+
+        setTimeout(()=>{
+
+            heart.remove();
+
+        },7000);
+
+    },400);
 
 }
