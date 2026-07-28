@@ -394,6 +394,8 @@ function showGalleryImages() {
 
                       startConfetti();
 
+                      startBalloons();
+
 }, 5000);
 
                 }, 10000);
@@ -453,6 +455,45 @@ function startConfetti(){
             piece.remove();
 
         }, 4500);
+
+    }
+
+}
+function startBalloons(){
+
+    const container = document.getElementById("balloonContainer");
+
+    const colors = [
+        "#ff4d6d",
+        "#ff99cc",
+        "#ffd700",
+        "#ffffff"
+    ];
+
+    for(let i = 0; i < 20; i++){
+
+        const balloon = document.createElement("div");
+
+        balloon.className = "balloon";
+
+        balloon.style.left = (Math.random() * 100) + "%";
+
+        balloon.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+
+        balloon.style.animationDelay =
+            (Math.random() * 3) + "s";
+
+        balloon.style.animationDuration =
+            (8 + Math.random() * 4) + "s";
+
+        container.appendChild(balloon);
+
+        setTimeout(() => {
+
+            balloon.remove();
+
+        },12000);
 
     }
 
