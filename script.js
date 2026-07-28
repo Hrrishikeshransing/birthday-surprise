@@ -416,10 +416,8 @@ function goToCake(){
     },100);
 
 }
-const blowBtn = document.getElementById("blowCandlesBtn");
-
-blowBtn.addEventListener("click", function(){
+function blowCandles(){
 
     alert("Button Clicked!");
 
-});
+}
