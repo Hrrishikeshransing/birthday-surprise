@@ -590,10 +590,10 @@ function showFinalLetter(){
     // Scroll to the letter
     setTimeout(() => {
 
-        finalSection.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+        window.scrollTo({
+    top: finalSection.offsetTop,
+    behavior: "smooth"
+});
 
     }, 300);
 
