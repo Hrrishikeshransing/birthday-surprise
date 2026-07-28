@@ -1428,3 +1428,71 @@ Countdown
     }
 
 }
+
+/* ==========================
+   Final Letter
+========================== */
+
+#finalMessage{
+
+    display:none;
+
+    min-height:100vh;
+
+    padding:60px 25px;
+
+    background:linear-gradient(to bottom,#020111,#0b1d3a,#000);
+
+    color:white;
+
+    text-align:center;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.letter{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:40px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    border-radius:20px;
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:0 0 30px rgba(255,215,0,0.25);
+
+}
+
+.letter h1{
+
+    color:#FFD700;
+
+    font-size:42px;
+
+    margin-bottom:30px;
+
+    text-shadow:0 0 15px gold;
+
+}
+
+#finalLetter{
+
+    font-size:22px;
+
+    line-height:2;
+
+    white-space:pre-line;
+
+    text-align:left;
+
+}
