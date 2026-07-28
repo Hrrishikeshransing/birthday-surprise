@@ -407,6 +407,8 @@ setTimeout(() => {
 
     startBalloons();
 
+   startFireworks();
+
 }, 1200);
 
 }, 5000);
@@ -507,6 +509,60 @@ function startBalloons(){
             balloon.remove();
 
         },12000);
+
+    }
+
+}
+function startFireworks(){
+
+    const container = document.getElementById("fireworksContainer");
+
+    for(let burst = 0; burst < 8; burst++){
+
+        setTimeout(() => {
+
+            const centerX = Math.random() * window.innerWidth;
+            const centerY = Math.random() * (window.innerHeight * 0.5) + 50;
+
+            for(let i = 0; i < 35; i++){
+
+                const spark = document.createElement("div");
+
+                spark.className = "firework";
+
+                spark.style.left = centerX + "px";
+                spark.style.top = centerY + "px";
+
+                const angle = (Math.PI * 2 * i) / 35;
+                const distance = 80 + Math.random() * 80;
+
+                spark.style.setProperty("--x",
+                    Math.cos(angle) * distance + "px");
+
+                spark.style.setProperty("--y",
+                    Math.sin(angle) * distance + "px");
+
+                const colors = [
+                    "#FFD700",
+                    "#FF4D6D",
+                    "#FFFFFF",
+                    "#FF99CC"
+                ];
+
+                spark.style.background =
+                    colors[Math.floor(Math.random() * colors.length)];
+
+                container.appendChild(spark);
+
+                setTimeout(() => {
+
+                    spark.remove();
+
+                },1500);
+
+            }
+
+        }, burst * 800);
 
     }
 
