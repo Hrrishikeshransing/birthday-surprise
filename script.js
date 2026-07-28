@@ -567,3 +567,58 @@ function startFireworks(){
     }
 
 }
+
+setTimeout(() => {
+
+    showFinalLetter();
+
+}, 800 * 8 + 2000);
+
+function showFinalLetter(){
+
+    const finalSection = document.getElementById("finalMessage");
+    const finalLetter = document.getElementById("finalLetter");
+
+    finalSection.style.display = "flex";
+
+    finalSection.scrollIntoView({
+        behavior: "smooth"
+    });
+
+    const message = `Happy Birthday Sonal ❤️
+
+On your special day, I just want to take a moment to tell you how much you truly mean to me.
+
+Thank you for being there during my toughest times, standing by my side when things weren't easy, and never letting me feel alone. Your support has been my greatest strength.
+
+Thank you for always understanding me, even when I struggle to express myself. Thank you for your patience, your kindness, and all the little things you do for me every single day. They often go unnoticed, but they mean the world to me.
+
+You are not just my wife, but also my best friend, my partner, and my greatest blessing. Life feels so much more beautiful with you in it. Your love gives me peace, your smile fills my heart with happiness, and your presence makes everything better.
+
+I am truly grateful for you and everything you do. I promise to always stand by your side, support you through every step of life, and love you more with each passing day.
+
+Once again, Happy Birthday Sonal. I hope your day is as wonderful and as special as you are to me. ❤️
+
+With all my love,
+
+Hrishikesh ❤️`;
+
+    let i = 0;
+
+    function typeLetter(){
+
+        if(i < message.length){
+
+            finalLetter.textContent += message.charAt(i);
+
+            i++;
+
+            setTimeout(typeLetter, 30);
+
+        }
+
+    }
+
+    typeLetter();
+
+}
