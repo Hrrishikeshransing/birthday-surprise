@@ -595,7 +595,7 @@ function showFinalLetter(){
     behavior: "smooth"
 });
 
-    }, 300);
+    }, 500);
 
     const message = `Happy Birthday Sonal ❤️
 
