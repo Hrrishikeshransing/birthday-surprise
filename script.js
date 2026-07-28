@@ -392,6 +392,8 @@ function showGalleryImages() {
 
     document.getElementById("magicWish").style.display = "block";
 
+                      startConfetti();
+
 }, 5000);
 
                 }, 10000);
@@ -426,5 +428,32 @@ function goToCake(){
 function blowCandles(){
 
     alert("Button Clicked!");
+
+}
+function startConfetti(){
+
+    const container = document.getElementById("confettiContainer");
+
+    for(let i = 0; i < 120; i++){
+
+        const piece = document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.style.left = Math.random() * 100 + "%";
+
+        piece.style.animationDelay = (Math.random() * 2) + "s";
+
+        piece.style.transform = "rotate(" + (Math.random() * 360) + "deg)";
+
+        container.appendChild(piece);
+
+        setTimeout(() => {
+
+            piece.remove();
+
+        }, 4500);
+
+    }
 
 }
