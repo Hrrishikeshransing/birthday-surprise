@@ -390,6 +390,8 @@ function showGalleryImages() {
 
     document.getElementById("candles").classList.add("blown");
 
+    document.getElementById("magicWish").style.display = "block";
+
 }, 5000);
 
                 }, 10000);
