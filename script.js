@@ -420,6 +420,6 @@ const blowBtn = document.getElementById("blowCandlesBtn");
 
 blowBtn.addEventListener("click", function(){
 
-    document.getElementById("candles").classList.add("blown");
+    alert("Button Clicked!");
 
 });
