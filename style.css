@@ -1437,19 +1437,23 @@ Countdown
 
     display:none;
 
-    min-height:100vh;
+    opacity:0;
 
-    padding:60px 25px;
+    transform:translateY(30px);
 
-    background:linear-gradient(to bottom,#020111,#0b1d3a,#000);
+    transition:all 1.5s ease;
 
-    color:white;
+    margin-top:50px;
 
-    text-align:center;
+}
 
-    justify-content:center;
+#finalMessage.show{
 
-    align-items:center;
+    display:block;
+
+    opacity:1;
+
+    transform:translateY(0);
 
 }
 
