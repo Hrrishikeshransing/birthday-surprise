@@ -314,52 +314,50 @@ function typeWriter(){
 
     function typing(){
 
-       if(index < birthdayText.length){
+    if(index >= birthdayText.length){
 
-    message.innerHTML += birthdayText.charAt(index);
-          // Keep the newest line visible
-container.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-});
+        setTimeout(function(){
+
+            document.getElementById("gallerySection").style.display = "block";
+
+            showGalleryImages();
+
+        },2000);
+
+        return;
+
+    }
+
+    const char = birthdayText.charAt(index);
+
+    message.textContent += char;
 
     index++;
 
-    // Scroll the page every 8 characters
-    if(index % 8 === 0){
+    requestAnimationFrame(() => {
 
         window.scrollTo({
             top: document.body.scrollHeight,
-            behavior: "smooth"
+            behavior: "instant"
         });
 
-    }
-
-    setTimeout(typing, 35);
-
-}else{
-
-    // Final scroll after typing completes
-    window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: "smooth"
     });
 
-    setTimeout(function(){
+    let delay = 35;
 
-        document.getElementById("gallerySection").style.display = "block";
+    if(char === ","){
+        delay = 300;
+    }
+    else if(char === "." || char === "!" || char === "?"){
+        delay = 700;
+    }
+    else if(char === "\n"){
+        delay = 1000;
+    }
 
-        showGalleryImages();
-
-        document.getElementById("gallerySection").scrollIntoView({
-            behavior: "smooth"
-        });
-
-    },2000);
+    setTimeout(typing, delay);
 
 }
-
-    }
 
     typing();
 
