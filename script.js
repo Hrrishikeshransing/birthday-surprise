@@ -584,22 +584,17 @@ const finalLetter = document.getElementById("finalLetter");
 
 finalSection.classList.add("show");
 
-// Wait for Safari to render the section
+// Scroll using the universal function
+scrollToSection("finalMessage", 400);
+
+// Hide cake after the scroll has started
 setTimeout(() => {
 
-    finalSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
+    document.getElementById("cakeSection").style.display = "none";
 
-    // Hide cake AFTER scrolling
-    setTimeout(() => {
+}, 1200);
 
-        document.getElementById("cakeSection").style.display = "none";
-
-    }, 1000);
-
-}, 300);
+   
     const message = `Happy Birthday Sonal ❤️
 
 On your special day, I just want to take a moment to tell you how much you truly mean to me.
@@ -682,5 +677,31 @@ function startHeartRain(){
         },7000);
 
     },400);
+
+}
+function scrollToSection(sectionId, delay = 300){
+
+    setTimeout(() => {
+
+        const section = document.getElementById(sectionId);
+
+        if(!section) return;
+
+        // Safari needs the section to be rendered first
+        requestAnimationFrame(() => {
+
+            const y =
+                section.getBoundingClientRect().top +
+                window.pageYOffset -
+                20;
+
+            window.scrollTo({
+                top: y,
+                behavior: "smooth"
+            });
+
+        });
+
+    }, delay);
 
 }
