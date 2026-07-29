@@ -578,34 +578,28 @@ function startFireworks(){
 
 function showFinalLetter(){
 
-    // Hide the cake section
-    document.getElementById("cakeSection").style.display = "none";
-
     // Show the final letter section
-    const finalSection = document.getElementById("finalMessage");
-    const finalLetter = document.getElementById("finalLetter");
+const finalSection = document.getElementById("finalMessage");
+const finalLetter = document.getElementById("finalLetter");
 
-    finalSection.classList.add("show");
+finalSection.classList.add("show");
 
-  // Scroll to the letter (Safari compatible)
+// Wait for Safari to render the section
 setTimeout(() => {
 
     finalSection.scrollIntoView({
-        behavior: "auto",
+        behavior: "smooth",
         block: "start"
     });
 
+    // Hide cake AFTER scrolling
     setTimeout(() => {
 
-        window.scrollTo({
-            top: finalSection.offsetTop,
-            behavior: "smooth"
-        });
+        document.getElementById("cakeSection").style.display = "none";
 
-    }, 200);
+    }, 1000);
 
-}, 800);
-
+}, 300);
     const message = `Happy Birthday Sonal ❤️
 
 On your special day, I just want to take a moment to tell you how much you truly mean to me.
