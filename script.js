@@ -312,9 +312,39 @@ function typeWriter(){
 
     message.innerHTML = "";
 
-    function typing(){
+   function typing(){
 
-    if(index >= birthdayText.length){
+    if(index < birthdayText.length){
+
+        message.innerHTML += birthdayText.charAt(index);
+
+        // Keep the newest line visible
+        container.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        index++;
+
+        // Scroll the page every 8 characters
+        if(index % 8 === 0){
+
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth"
+            });
+
+        }
+
+        setTimeout(typing, 35);
+
+    }else{
+
+        // Final scroll after typing completes
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
 
         setTimeout(function(){
 
@@ -322,40 +352,13 @@ function typeWriter(){
 
             showGalleryImages();
 
+            document.getElementById("gallerySection").scrollIntoView({
+                behavior: "smooth"
+            });
+
         },2000);
 
-        return;
-
     }
-
-    const char = birthdayText.charAt(index);
-
-    message.textContent += char;
-
-    index++;
-
-    requestAnimationFrame(() => {
-
-        window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "instant"
-        });
-
-    });
-
-    let delay = 35;
-
-    if(char === ","){
-        delay = 300;
-    }
-    else if(char === "." || char === "!" || char === "?"){
-        delay = 700;
-    }
-    else if(char === "\n"){
-        delay = 1000;
-    }
-
-    setTimeout(typing, delay);
 
 }
 
