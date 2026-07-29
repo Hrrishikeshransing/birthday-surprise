@@ -318,6 +318,8 @@ function typeWriter(){
 
         message.innerHTML += birthdayText.charAt(index);
 
+message.scrollTop = message.scrollHeight;
+
         // Keep the newest line visible
        index++;
 
