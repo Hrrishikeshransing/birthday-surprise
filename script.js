@@ -369,57 +369,67 @@ function showGalleryImages() {
 
     const images = document.querySelectorAll(".gallery img");
 
-    images.forEach((img, index) => {
+    let current = 0;
+
+    function showNextPhoto() {
+
+        if (current > 0) {
+            images[current - 1].classList.remove("show");
+        }
+
+        images[current].classList.add("show");
+
+        images[current].scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
 
         setTimeout(() => {
 
-            img.classList.add("show");
+            current++;
 
-            if (index === images.length - 1) {
+            if (current < images.length) {
 
-                console.log("Gallery completed");
+                showNextPhoto();
+
+            } else {
+
+                document.getElementById("cakeSection").style.display = "block";
+
+                document.getElementById("cakeSection").scrollIntoView({
+                    behavior: "smooth"
+                });
 
                 setTimeout(() => {
 
-                    document.getElementById("cakeSection").style.display = "block";
+                    document.getElementById("candles").classList.add("blown");
 
-                    document.getElementById("cakeSection").scrollIntoView({
-                        behavior: "smooth"
+                    const wish = document.getElementById("magicWish");
+
+                    wish.style.display = "block";
+
+                    wish.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
                     });
-                   setTimeout(() => {
 
-    document.getElementById("candles").classList.add("blown");
+                    setTimeout(() => {
 
-    const wish = document.getElementById("magicWish");
+                        startConfetti();
+                        startBalloons();
+                        startFireworks();
 
-wish.style.display = "block";
+                    }, 1200);
 
-// Move the wish message to the center of the screen
-wish.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-});
-
-// Wait for scrolling to finish
-setTimeout(() => {
-
-    startConfetti();
-
-    startBalloons();
-
-   startFireworks();
-
-}, 1200);
-
-}, 5000);
-
-                }, 10000);
+                }, 5000);
 
             }
 
-        }, index * 600);
+        }, 3000);
 
-    });
+    }
+
+    showNextPhoto();
 
 }
 function goToCake(){
