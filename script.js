@@ -355,7 +355,7 @@ setTimeout(typing, delay);
                 behavior: "smooth"
             });
 
-        },2000);
+        },5000);
 
     }
 
