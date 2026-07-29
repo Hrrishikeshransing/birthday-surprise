@@ -587,15 +587,24 @@ function showFinalLetter(){
 
     finalSection.classList.add("show");
 
-    // Scroll to the letter
+  // Scroll to the letter (Safari compatible)
+setTimeout(() => {
+
+    finalSection.scrollIntoView({
+        behavior: "auto",
+        block: "start"
+    });
+
     setTimeout(() => {
 
         window.scrollTo({
-    top: finalSection.offsetTop,
-    behavior: "smooth"
-});
+            top: finalSection.offsetTop,
+            behavior: "smooth"
+        });
 
-    }, 500);
+    }, 200);
+
+}, 800);
 
     const message = `Happy Birthday Sonal ❤️
 
