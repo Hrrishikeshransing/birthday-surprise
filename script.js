@@ -319,11 +319,17 @@ function typeWriter(){
         message.innerHTML += birthdayText.charAt(index);
 
         // Keep the newest line visible
-        index++;
+       index++;
 
-container.scrollIntoView({
-    behavior: "instant",
-    block: "center"
+requestAnimationFrame(() => {
+
+    container.scrollIntoView({
+        behavior: "instant",
+        block: "start"
+    });
+
+    window.scrollBy(0, 40);
+
 });
        let delay = 45;
 
