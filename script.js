@@ -3,8 +3,9 @@
    Scene 1 - Countdown Portal
 ====================================================== */
 
-//const birthdayDate = new Date("August 10, 2026 00:00:00").getTime();
-const birthdayDate = new Date("January 1, 2025 00:00:00").getTime();
+const birthdayDate = new Date("August 10, 2026 00:00:00").getTime();
+//Testing
+//const birthdayDate = new Date("January 1, 2025 00:00:00").getTime();
 
 const loadingScreen = document.getElementById("loadingScreen");
 
