@@ -325,10 +325,10 @@ message.scrollTop = message.scrollHeight;
 
 requestAnimationFrame(() => {
 
-    container.scrollIntoView({
-        behavior: "instant",
-        block: "start"
-    });
+   container.scrollIntoView({
+    behavior: "auto",
+    block: "start"
+});
 
     window.scrollBy(0, 40);
 
