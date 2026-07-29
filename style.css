@@ -966,11 +966,17 @@ Countdown
 
 #typewriterMessage{
 
-    min-height:220px;
-max-height:70vh;
-overflow-y:auto;
-padding-right:8px;
-scroll-behavior:smooth;
+   min-height:220px;
+
+    white-space:pre-line;
+
+    line-height:2;
+
+    font-size:24px;
+
+    max-width:900px;
+
+    margin:0 auto;
 
 }
 /* ===========================================
