@@ -325,12 +325,7 @@ message.scrollTop = message.scrollHeight;
 
 requestAnimationFrame(() => {
 
-   container.scrollIntoView({
-    behavior: "auto",
-    block: "start"
-});
-
-    window.scrollBy(0, 40);
+   
 
 });
        let delay = 45;
