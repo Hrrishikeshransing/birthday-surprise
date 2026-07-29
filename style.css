@@ -1048,11 +1048,29 @@ Countdown
 
     transform:translateY(0) scale(1);
 
+    animation:photoZoom 3s ease-in-out forwards;
+
 }
 
 .gallery img:hover{
 
     transform:scale(1.05);
+
+}
+
+@keyframes photoZoom{
+
+    0%{
+
+        transform:translateY(0) scale(1);
+
+    }
+
+    100%{
+
+        transform:translateY(0) scale(1.08);
+
+    }
 
 }
 /* ===========================================
