@@ -621,7 +621,7 @@ Hrishikesh ❤️`;
 
     if(i >= message.length){
 
-        scrollToSection("finalMessage", 100);
+        
 
         startHeartRain();
 
