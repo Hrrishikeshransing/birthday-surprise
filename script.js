@@ -374,10 +374,20 @@ function showGalleryImages() {
     function showNextPhoto() {
 
         if (current > 0) {
-            images[current - 1].classList.remove("show");
-        }
 
-        images[current].classList.add("show");
+    images[current - 1].style.opacity = "0";
+
+    setTimeout(() => {
+
+        images[current - 1].classList.remove("show");
+
+    }, 700);
+
+}
+
+images[current].classList.add("show");
+
+images[current].style.opacity = "1";
 
         images[current].scrollIntoView({
             behavior: "smooth",
