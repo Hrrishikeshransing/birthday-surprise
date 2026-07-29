@@ -930,9 +930,19 @@ Countdown
 
 #birthdayMessageContainer{
 
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
     text-align:center;
 
-    padding:80px 20px;
+    padding:40px 20px;
 
     opacity:0;
 
