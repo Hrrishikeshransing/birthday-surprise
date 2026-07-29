@@ -349,22 +349,24 @@ setTimeout(typing, delay);
 
     }else{
 
-      
+    message.scrollIntoView({
+        behavior: "smooth",
+        block: "end"
+    });
 
-        setTimeout(function(){
+    setTimeout(function(){
 
-            document.getElementById("gallerySection").style.display = "block";
+        document.getElementById("gallerySection").style.display = "block";
 
-            showGalleryImages();
+        showGalleryImages();
 
-            document.getElementById("gallerySection").scrollIntoView({
-                behavior: "smooth"
-            });
+        document.getElementById("gallerySection").scrollIntoView({
+            behavior: "smooth"
+        });
 
-        },5000);
+    },5000);
 
-    }
-
+}
 }
 
     typing();
