@@ -584,15 +584,18 @@ const finalLetter = document.getElementById("finalLetter");
 
 finalSection.classList.add("show");
 
-// Scroll using the universal function
-scrollToSection("finalMessage", 400);
+// Hide the cake first
+document.getElementById("cakeSection").style.display = "none";
 
-// Hide cake after the scroll has started
-setTimeout(() => {
+// Scroll once to the final letter
+requestAnimationFrame(() => {
 
-    document.getElementById("cakeSection").style.display = "none";
+    finalSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 
-}, 1200);
+});
 
    
     const message = `Happy Birthday Sonal ❤️
