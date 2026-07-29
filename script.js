@@ -621,17 +621,31 @@ Hrishikesh ❤️`;
 
     if(i >= message.length){
 
-    startHeartRain();
+        scrollToSection("finalMessage", 100);
 
-    return;
+        startHeartRain();
 
-}
+        return;
+
+    }
 
     const char = message.charAt(i);
+
     finalLetter.textContent += char;
+
     i++;
 
-    let delay = 45; // Normal typing speed
+    // Smoothly follow the text while typing
+    requestAnimationFrame(() => {
+
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "instant"
+        });
+
+    });
+
+    let delay = 45;
 
     if(char === ","){
         delay = 300;
@@ -647,10 +661,9 @@ Hrishikesh ❤️`;
 
 }
 
-    typeLetter();
+typeLetter();
 
 }
-
 function startHeartRain(){
 
     const container = document.getElementById("heartContainer");
