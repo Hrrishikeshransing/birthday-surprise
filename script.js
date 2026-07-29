@@ -325,7 +325,21 @@ container.scrollIntoView({
     behavior: "instant",
     block: "center"
 });
-        setTimeout(typing, 35);
+       let delay = 45;
+
+const char = birthdayText.charAt(index - 1);
+
+if(char === ","){
+    delay = 300;
+}
+else if(char === "." || char === "!" || char === "?"){
+    delay = 700;
+}
+else if(char === "\n"){
+    delay = 1000;
+}
+
+setTimeout(typing, delay);
 
     }else{
 
